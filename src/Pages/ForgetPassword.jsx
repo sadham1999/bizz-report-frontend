@@ -41,17 +41,25 @@ function ForgetPassword() {
   };
 
   return (
-    <Container maxWidth="lg">
-      <Grid container spacing={2} alignItems="center" style={{ height: '100vh' }}>
+    <Container
+      maxWidth="lg"
+      sx={{
+        minHeight: '100vh',
+        py: 4,
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Grid container spacing={3} alignItems="center">
         <Grid item xs={12} md={6}>
           <Box
             component="img"
             sx={{
-              height: '100%',
               width: '100%',
+              minHeight: { xs: 260, md: 520 },
               objectFit: 'cover',
-              borderRadius: '10px',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              borderRadius: '24px',
+              boxShadow: '0 18px 48px rgba(15, 23, 42, 0.18)',
             }}
             alt="Forget Password"
             src={forgetImage}
@@ -63,25 +71,27 @@ function ForgetPassword() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              height: '100%',
-              padding: 4,
-              backgroundColor: '#f9f9f9',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              borderRadius: '10px',
+              minHeight: { xs: 'auto', md: 520 },
+              padding: { xs: 3, md: 5 },
+              background:
+                'linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(246,249,252,0.96) 100%)',
+              border: '1px solid rgba(216, 226, 238, 0.9)',
+              boxShadow: '0 18px 50px rgba(15, 23, 42, 0.12)',
+              borderRadius: '24px',
             }}
           >
             <Typography
               variant="h4"
               component="h1"
               gutterBottom
-              sx={{ fontFamily: 'Montserrat', fontWeight: 'bold', color: '#333' }}
+              sx={{ fontFamily: 'Montserrat', fontWeight: 800, color: '#102033', letterSpacing: '-0.03em' }}
             >
               Forgot Your Password?
             </Typography>
             <Typography
               variant="body1"
               gutterBottom
-              sx={{ fontFamily: 'Montserrat', color: '#666' }}
+              sx={{ fontFamily: 'Montserrat', color: '#5e6b7d', mb: 2 }}
             >
               Enter your email address to receive an OTP.
             </Typography>
@@ -104,6 +114,11 @@ function ForgetPassword() {
               InputLabelProps={{
                 sx: { fontWeight: 'bold', fontFamily: 'Montserrat' },
               }}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: '12px',
+                },
+              }}
             />
             <Button
               variant="contained"
@@ -113,12 +128,10 @@ function ForgetPassword() {
               sx={{
                 mt: 2,
                 fontFamily: 'Lato',
-                backgroundColor: '#007bff',
-                color: 'white',
-                '&:hover': {
-                  backgroundColor: '#0056b3',
-                },
-                padding: '10px 0',
+                padding: '12px 0',
+                borderRadius: '12px',
+                backgroundImage: 'linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)',
+                boxShadow: '0 12px 24px rgba(23, 50, 77, 0.18)',
               }}
             >
               RESET PASSWORD

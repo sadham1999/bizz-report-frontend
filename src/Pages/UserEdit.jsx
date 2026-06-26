@@ -208,7 +208,8 @@ const UserEditForm = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#ffffff',
+            background:
+              'radial-gradient(circle at top left, rgba(44, 123, 229, 0.08), transparent 26%), linear-gradient(180deg, #f7f9fc 0%, #edf2f8 100%)',
             padding: 0,
           }}
         >
@@ -232,9 +233,10 @@ const UserEditForm = () => {
                   sx={{
                     width: "100%",
                     padding: 3,
-                    boxShadow: 3,
-                    borderRadius: 2,
-                    backgroundColor: "#f0f4f8",
+                    boxShadow: "0 12px 32px rgba(15, 23, 42, 0.10)",
+                    borderRadius: 3,
+                    backgroundColor: "#ffffff",
+                    border: "1px solid #d8e2ee",
                   }}
                 >
                   <CardContent>
@@ -243,7 +245,8 @@ const UserEditForm = () => {
                         width: 100,
                         height: 100,
                         margin: "0 auto 16px",
-                        backgroundColor: "#007bff",
+                        backgroundColor: "#1f2d39",
+                        boxShadow: "0 12px 24px rgba(15, 23, 42, 0.16)",
                       }}
                       src={man}
                     >
@@ -252,7 +255,7 @@ const UserEditForm = () => {
                     <Grid
                       container
                       spacing={2}
-                      sx={{ backgroundColor: "#f0f4f8", marginTop: "20px" }}
+                      sx={{ backgroundColor: "transparent", marginTop: "20px" }}
                     >
                       <Grid item xs={6}>
                         <Typography
@@ -341,16 +344,16 @@ const UserEditForm = () => {
                       <Grid item xs={6}>
                         <Typography
                           variant="body1"
-                          sx={{
-                            fontFamily: "Montserrat",
-                            fontWeight: "bold",
-                            color:
+                            sx={{
+                              fontFamily: "Montserrat",
+                              fontWeight: "bold",
+                              color:
                               values.role_id === 1
-                                ? "purple"  // Super Admin
+                                ? "#1f2d39"  // Super Admin
                                 : values.role_id === 2
-                                ? "green"   // Admin
+                                ? "#14b8a6"   // Admin
                                 : values.role_id === 3
-                                ? "blue"    // User
+                                ? "#2c7be5"    // User
                                 : "inherit",
                           }}
                         >
@@ -364,11 +367,11 @@ const UserEditForm = () => {
                             fontFamily: "Montserrat",
                             color:
                               values.role_id === 1
-                                ? "purple"  // Super Admin
+                                ? "#7c3aed"  // Super Admin
                                 : values.role_id === 2
-                                ? "green"   // Admin
+                                ? "#14b8a6"   // Admin
                                 : values.role_id === 3
-                                ? "blue"    // User
+                                ? "#2c7be5"    // User
                                 : "inherit",
                           }}
                         >
@@ -448,6 +451,13 @@ const UserEditForm = () => {
           <Chip
             key={index}
             label={teamName}
+            size="small"
+            sx={{
+              margin: "2px",
+              backgroundColor: "#eff6ff",
+              color: "#1f2d39",
+              fontWeight: 700,
+            }}
           />
         ))}
     </div>
@@ -476,10 +486,11 @@ const UserEditForm = () => {
                     sx={{
                       marginBottom: 4,
                       textAlign: "center",
-                      backgroundColor: "#007bff",
+                      backgroundImage: "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
                       color: "white",
                       padding: 2,
-                      borderRadius: 2,
+                      borderRadius: 3,
+                      boxShadow: "0 12px 24px rgba(23, 50, 77, 0.18)",
                     }}
                   >
                     <Typography
@@ -490,7 +501,7 @@ const UserEditForm = () => {
                       Edit User
                     </Typography>
                   </Box>
-                  <Card sx={{ padding: 3, boxShadow: 3, borderRadius: 2 }}>
+                  <Card sx={{ padding: 3, boxShadow: "0 12px 32px rgba(15, 23, 42, 0.10)", borderRadius: 3, border: "1px solid #d8e2ee" }}>
                     <CardContent>
                       <Form>
                         <Box sx={{ flexGrow: 1 }}>
@@ -791,28 +802,28 @@ const UserEditForm = () => {
 
                             <Grid container justifyContent="center" spacing={2}>
                               <Grid item>
-                                <Button
-                                  type="submit"
-                                  variant="contained"
-                                  color="primary"
-                                  disabled={isSubmitting}
-                                  size="medium" // Change size to medium
-                                  fullWidth
-                                  sx={{ mt: 4 }}
-                                >
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  disabled={isSubmitting}
+                  size="medium" // Change size to medium
+                  fullWidth
+                  sx={{ mt: 4, borderRadius: 2, px: 4, py: 1.2 }}
+                >
                                   {isSubmitting ? "Submitting..." : "Submit"}
                                 </Button>
                               </Grid>
                               <Grid item>
-                                <Button
-                                  variant="contained"
-                                  color="secondary"
-                                  disabled={isSubmitting}
-                                  size="medium" // Change size to medium
-                                  fullWidth
-                                  sx={{ mt: 4 }}
-                                  onClick={() => navigate(-1)}
-                                >
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  disabled={isSubmitting}
+                  size="medium" // Change size to medium
+                  fullWidth
+                  sx={{ mt: 4, borderRadius: 2, px: 4, py: 1.2 }}
+                  onClick={() => navigate(-1)}
+                >
                                   Back
                                 </Button>
                               </Grid>

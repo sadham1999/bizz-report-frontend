@@ -28,8 +28,8 @@ import TimerIcon from "@mui/icons-material/Timer";
 import dayjs from "dayjs";
 const BIZZ_COLORS = {
   dark: "#0f172a",
-  navy: "#1e3a8a",
-  blue: "#2563eb",
+  navy: "#1f2d39",
+  blue: "#23b3aa",
   lightBlue: "#dbeafe",
 };
 
@@ -86,12 +86,12 @@ const LeadTimeStatus = {
 };
 
 const TatRangeColors = {
-  "0–1 hr": { label: "0–1 hr", color: "#00B050" },       // bright green
-  "1–2 hrs": { label: "1–2 hrs", color: "#92D050" },     // lime green
-  "2–4 hrs": { label: "2–4 hrs", color: "#FFC000" },     // amber
-  "4–8 hrs": { label: "4–8 hrs", color: "#FF9900" },     // orange
-  ">8 hrs": { label: ">8 hrs", color: "#FF0000" },        // red
-  "N/A": { label: "N/A", color: "#CCCCCC" }              // gray fallback
+  "0–1 hr": { label: "0–1 hr", color: "#15803d" },
+  "1–2 hrs": { label: "1–2 hrs", color: "#65a30d" },
+  "2–4 hrs": { label: "2–4 hrs", color: "#b45309" },
+  "4–8 hrs": { label: "4–8 hrs", color: "#c2410c" },
+  ">8 hrs": { label: ">8 hrs", color: "#b91c1c" },
+  "N/A": { label: "N/A", color: "#94a3b8" }
 };
 
 export default function Delay() {
@@ -433,7 +433,7 @@ const fetchApiData = async () => {
           backgroundColor: 'rgba(255, 255, 255, 0.8)', zIndex: 1000,
           display: 'flex', justifyContent: 'center', alignItems: 'center'
         }}>
-          <HashLoader color="#0016C6" margin={15} size={100} />
+          <HashLoader color="#23b3aa" margin={15} size={100} />
         </div>
       )}
       <Paper sx={{ width: '100%', overflow: 'hidden', padding: "20px", fontFamily: 'Montserrat' }}>
@@ -441,10 +441,13 @@ const fetchApiData = async () => {
   elevation={0}
   sx={{
     mb: 3,
-    p: { xs: 2, md: 3 },
+    p: { xs: 1.5, md: 2 },
     borderRadius: "18px",
-  backgroundColor: BIZZ_COLORS.navy,    color: "#fff",
+    backgroundImage:
+      "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+    color: "#fff",
     boxShadow: "0 10px 28px rgba(15, 23, 42, 0.22)",
+    border: "1px solid rgba(255,255,255,0.08)",
   }}
 >
   <Grid container spacing={2} alignItems="center">
@@ -452,9 +455,9 @@ const fetchApiData = async () => {
       <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
         <Box
           sx={{
-            width: 48,
-            height: 48,
-            borderRadius: "14px",
+            width: 40,
+            height: 40,
+            borderRadius: "12px",
             background: "rgba(255,255,255,0.16)",
             display: "flex",
             alignItems: "center",
@@ -466,7 +469,7 @@ const fetchApiData = async () => {
 
         <Box>
           <Typography
-            variant="h5"
+            variant="h6"
             sx={{
               fontWeight: 800,
               letterSpacing: "0.02em",
@@ -502,6 +505,8 @@ const fetchApiData = async () => {
         sx={{
           color: "#fff",
           fontWeight: 700,
+          height: 28,
+          "& .MuiChip-label": { px: 1.5 },
           background: "rgba(255,255,255,0.16)",
           border: "1px solid rgba(255,255,255,0.25)",
         }}
@@ -626,8 +631,8 @@ onChange={(date) => setEndDate(date)}      slotProps={{
                 textTransform: 'none',
                 fontWeight: 600,
                 borderRadius: '8px',
-                backgroundColor: isLocked ? '#8c8c8c' : '#01377D',
-                '&:hover': { backgroundColor: isLocked ? '#8c8c8c' : '#012a5e' },
+                backgroundColor: isLocked ? '#8c8c8c' : '#1f2d39',
+                '&:hover': { backgroundColor: isLocked ? '#8c8c8c' : '#245fc0' },
                 whiteSpace: 'nowrap',
               }}
             >
@@ -660,8 +665,8 @@ onChange={(date) => setEndDate(date)}      slotProps={{
                 textTransform: 'none',
                 fontWeight: 600,
                 borderRadius: '8px',
-                backgroundColor: '#1F820F',
-                '&:hover': { backgroundColor: '#146B10' },
+                backgroundColor: '#14b8a6',
+                '&:hover': { backgroundColor: '#0f766e' },
                 whiteSpace: 'nowrap',
               }}
             >
@@ -802,7 +807,8 @@ onChange={(date) => setEndDate(date)}      slotProps={{
                     align={column.align}
                     style={{
                       minWidth: column.minWidth,
-                      backgroundColor: '#01377D',
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
                       fontWeight: 'bold',
                       color: "#FFFFFF",
                       fontFamily: 'Montserrat',

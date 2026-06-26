@@ -97,13 +97,13 @@ const TeamAddForm = () => {
                                            width: 100,
                                            height: 100,
                                            margin: "0 auto 16px",
-                                           backgroundColor: "#007bff",
+                                           backgroundColor: "#1f2d39",
                                          }}
                                          src={man}
                                        >
                                          U
                                        </Avatar>
-                    <Grid container spacing={2} sx={{ backgroundColor: '#f0f4f8', padding: 2 }}>
+                    <Grid container spacing={2} sx={{ backgroundColor: '#f7f9fc', padding: 2 }}>
                       <Grid item xs={6}>
                         <Typography variant="body1" sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>Team Name:</Typography>
                       </Grid>
@@ -133,7 +133,7 @@ const TeamAddForm = () => {
               <Grid item xs={12} md={6}>
                 <Card sx={{ padding: 3, boxShadow: 3, borderRadius: 2 }}>
                   <CardContent>
-                    <Box sx={{ marginBottom: 4, textAlign: 'center', backgroundColor: '#007bff', color: 'white', padding: 2, borderRadius: 2 }}>
+                    <Box sx={{ marginBottom: 4, textAlign: 'center', backgroundColor: '#1f2d39', color: 'white', padding: 2, borderRadius: 2 }}>
                       <Typography variant="h4" component="h1" sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
                         Add Team
                       </Typography>

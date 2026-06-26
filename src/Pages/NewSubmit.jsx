@@ -153,10 +153,10 @@ function NewSubmit() {
                 sx={{
                   mt: 2,
                   fontFamily: 'Lato',
-                  backgroundColor: '#007bff',
+                  backgroundColor: '#1f2d39',
                   color: 'white',
                   '&:hover': {
-                    backgroundColor: '#0056b3',
+                    backgroundColor: '#245fc0',
                   },
                   padding: '10px 0',
                 }}

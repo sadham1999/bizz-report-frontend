@@ -4,14 +4,18 @@
 
 .page_404 {
     padding: 40px 0;
-    background: #fff;
-    font-family: 'Arvo', serif;
+    background:
+        radial-gradient(circle at top left, rgba(35, 179, 170, 0.1), transparent 24%),
+        linear-gradient(180deg, #f5f7f8 0%, #ebf0f2 100%);
+    font-family: var(--font-family);
+    color: #24333f;
 }
 
 .four_zero_four_bg {
     background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
     height: 400px;
     background-position: center;
+    filter: saturate(0.95) contrast(0.98);
 }
 
 .text-center {
@@ -21,11 +25,19 @@
 .link_404 {
     color: #fff !important;
     padding: 10px 20px;
-    background: #39ac31;
+    background: linear-gradient(135deg, #1f2d39 0%, #23b3aa 100%);
     margin: 20px 0;
     display: inline-block;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
 }
 
 .contant_box_404 {
     margin-top: -500px;
+}
+
+.h2 {
+    color: #24333f;
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }

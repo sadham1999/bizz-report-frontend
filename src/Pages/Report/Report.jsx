@@ -428,8 +428,8 @@ if (field.type === 'select') {
               sx={{
                 height: 40,
                 whiteSpace: 'nowrap',
-                backgroundColor: isLocked ? '#8c8c8c' : '#01377D',
-                '&:hover': { backgroundColor: isLocked ? '#8c8c8c' : '#012a5e' },
+                backgroundColor: isLocked ? '#8c8c8c' : '#1f2d39',
+                '&:hover': { backgroundColor: isLocked ? '#8c8c8c' : '#17212b' },
               }}
             >
               {isLocked

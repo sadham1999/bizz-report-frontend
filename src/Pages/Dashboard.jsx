@@ -23,49 +23,57 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import CancelIcon from "@mui/icons-material/Cancel";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
+import { appColors } from "../theme";
 
 const dashboardCards = [
   {
     title: "TAT Report",
     count: 145,
-    color: "#4F46E5",
+    color: appColors.navy,
     icon: <AccessTimeIcon />,
   },
   {
     title: "Daily Report",
     count: 89,
-    color: "#06B6D4",
+    color: appColors.tealDeep,
     icon: <DescriptionIcon />,
   },
   {
     title: "Weekly Report",
     count: 42,
-    color: "#10B981",
+    color: appColors.teal,
     icon: <CalendarMonthIcon />,
   },
   {
     title: "Amendment Report",
     count: 12,
-    color: "#F59E0B",
+    color: appColors.warning,
     icon: <EditNoteIcon />,
   },
   {
     title: "Cancel Report",
     count: 5,
-    color: "#EF4444",
+    color: appColors.danger,
     icon: <CancelIcon />,
   },
   {
     title: "Pending Report",
     count: 21,
-    color: "#8B5CF6",
+    color: appColors.navySoft,
     icon: <PendingActionsIcon />,
   },
 ];
 
 function Dashboard() {
   return (
-    <Box sx={{ p: 3, background: "#F8FAFC", minHeight: "100vh" }}>
+    <Box
+      sx={{
+        p: { xs: 2, md: 3 },
+        background:
+          "radial-gradient(circle at top left, rgba(35, 179, 170, 0.08), transparent 26%), linear-gradient(180deg, #f5f7f8 0%, #ebf0f2 100%)",
+        minHeight: "100vh",
+      }}
+    >
       {/* Header */}
       <Box
         sx={{
@@ -75,11 +83,12 @@ function Dashboard() {
           mb: 4,
         }}
       >
-        <Avatar
-          sx={{
-            bgcolor: "#4F46E5",
+          <Avatar
+            sx={{
+            background: `linear-gradient(135deg, ${appColors.navy} 0%, ${appColors.teal} 100%)`,
             width: 56,
             height: 56,
+            boxShadow: "0 12px 24px rgba(15, 23, 42, 0.16)",
           }}
         >
           <DashboardIcon />
@@ -105,11 +114,13 @@ function Dashboard() {
                 borderRadius: 4,
                 color: "#fff",
                 background: `linear-gradient(135deg, ${card.color}, ${card.color}CC)`,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+                boxShadow: "0 12px 30px rgba(15,23,42,0.12)",
                 transition: "0.3s",
                 cursor: "pointer",
+                border: "1px solid rgba(255,255,255,0.12)",
                 "&:hover": {
                   transform: "translateY(-6px)",
+                  boxShadow: "0 18px 38px rgba(15,23,42,0.16)",
                 },
               }}
             >
@@ -161,7 +172,7 @@ function Dashboard() {
               <Typography
                 variant="h3"
                 fontWeight="bold"
-                color="#4F46E5"
+                color={appColors.navy}
               >
                 314
               </Typography>
@@ -179,7 +190,7 @@ function Dashboard() {
               <Typography
                 variant="h3"
                 fontWeight="bold"
-                color="#10B981"
+                color={appColors.teal}
               >
                 288
               </Typography>
@@ -197,7 +208,7 @@ function Dashboard() {
               <Typography
                 variant="h3"
                 fontWeight="bold"
-                color="#F59E0B"
+                color={appColors.warning}
               >
                 26
               </Typography>

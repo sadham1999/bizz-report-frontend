@@ -1,7 +1,9 @@
 .dashboard-page {
   min-height: 100vh;
   padding: 28px;
-  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  background:
+    radial-gradient(circle at top left, rgba(35, 179, 170, 0.08), transparent 26%),
+    linear-gradient(180deg, #f5f7f8 0%, #ebf0f2 100%);
   font-family: "Inter", Arial, sans-serif;
 }
 
@@ -10,14 +12,14 @@
 }
 
 .dashboard-subtitle {
-  color: #64748b;
+  color: #63707b;
   font-weight: 600;
   margin: 0 0 6px;
 }
 
 .dashboard-header h1 {
   margin: 0;
-  color: #0f172a;
+  color: #1f2d39;
   font-size: 30px;
 }
 
@@ -33,22 +35,22 @@
   border-radius: 18px;
   padding: 24px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  border: 1px solid #e2e8f0;
+  border: 1px solid #d7e0e6;
 }
 
 .summary-card.dark {
-  background: linear-gradient(135deg, #1e293b, #334155);
+  background: linear-gradient(135deg, #17212b, #1f2d39);
   color: #ffffff;
 }
 
 .summary-card p {
   margin: 0;
-  color: #64748b;
+  color: #63707b;
   font-size: 14px;
 }
 
 .summary-card.dark p {
-  color: #cbd5e1;
+  color: #d8e1e8;
 }
 
 .summary-card h2 {
@@ -57,7 +59,7 @@
 }
 
 .section-title {
-  color: #1e293b;
+  color: #1f2d39;
   margin-bottom: 16px;
 }
 
@@ -73,7 +75,7 @@
   background: #ffffff;
   padding: 22px;
   border-radius: 20px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #d7e0e6;
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
   transition: all 0.25s ease;
 }
@@ -81,7 +83,7 @@
 .report-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
-  border-color: #2563eb;
+  border-color: #23b3aa;
 }
 
 .report-top {
@@ -94,7 +96,7 @@
   width: 52px;
   height: 52px;
   border-radius: 16px;
-  background: #eff6ff;
+  background: #eff6f5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,15 +105,15 @@
 
 .report-top span {
   font-size: 13px;
-  color: #475569;
-  background: #f1f5f9;
+  color: #4f5d68;
+  background: #f1f5f4;
   padding: 6px 12px;
   border-radius: 20px;
 }
 
 .report-card h3 {
   margin: 24px 0 18px;
-  color: #0f172a;
+  color: #17212b;
   font-size: 20px;
 }
 
@@ -123,13 +125,13 @@
 
 .report-footer p {
   margin: 0;
-  color: #64748b;
+  color: #63707b;
   font-size: 14px;
 }
 
 .report-footer button {
   border: none;
-  background: #2563eb;
+  background: #23b3aa;
   color: #ffffff;
   padding: 9px 18px;
   border-radius: 10px;
@@ -138,5 +140,5 @@
 }
 
 .report-footer button:hover {
-  background: #1d4ed8;
+  background: #17978f;
 }

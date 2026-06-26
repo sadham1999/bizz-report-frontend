@@ -86,9 +86,9 @@ const SubClientAddForm = () => {
         <Box sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff' }}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={4}>
-              <Card sx={{ width: '100%', padding: 3, boxShadow: 3, borderRadius: 2, backgroundColor: '#f0f4f8' }}>
+              <Card sx={{ width: '100%', padding: 3, boxShadow: 3, borderRadius: 2, backgroundColor: '#f7f9fc' }}>
                 <CardContent>
-                  <Avatar sx={{ width: 100, height: 100, margin: '0 auto 16px', backgroundColor: '#007bff' }} src={man}>C</Avatar>
+                  <Avatar sx={{ width: 100, height: 100, margin: '0 auto 16px', backgroundColor: '#1f2d39' }} src={man}>C</Avatar>
                   <Grid container spacing={2}>
                     <Grid item xs={6}><Typography variant="body1" sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>SubClient Name:</Typography></Grid>
                     <Grid item xs={6}><Typography variant="body1" sx={{ fontFamily: 'Montserrat' }}>{values.subclient_name || 'SubClient Name'}</Typography></Grid>
@@ -112,7 +112,7 @@ const SubClientAddForm = () => {
             </Grid>
             <Grid item xs={12} md={8}>
               <Box sx={{ width: '100%' }}>
-                <Box sx={{ marginBottom: 4, textAlign: 'center', backgroundColor: '#007bff', color: 'white', padding: 2, borderRadius: 2 }}>
+                <Box sx={{ marginBottom: 4, textAlign: 'center', backgroundColor: '#1f2d39', color: 'white', padding: 2, borderRadius: 2 }}>
                   <Typography variant="h3" component="h1" sx={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>Add Sub-Client</Typography>
                 </Box>
                 <Card sx={{ padding: 3, boxShadow: 3, borderRadius: 2 }}>

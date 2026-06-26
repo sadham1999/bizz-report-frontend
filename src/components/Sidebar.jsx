@@ -49,7 +49,7 @@ const Sidebar = ({ children }) => {
 
   const handleLogout = () => {
     sessionStorage.clear();
-    navigate("/");
+    navigate("/login", { replace: true });
   };
 
   const menuItem = [
@@ -116,11 +116,21 @@ const Sidebar = ({ children }) => {
   return (
     <div className="container">
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
-       <div className="top_section">
-  <div className="bars" onClick={toggle}>
-    <MenuIcon />
-  </div>
-</div>
+        <div className="top_section">
+          <div className="brand-block">
+            <div className="brand-mark">B</div>
+            {isOpen && (
+              <div className="brand-copy">
+                <strong>Bizz Report</strong>
+                <span>Admin Panel</span>
+              </div>
+            )}
+          </div>
+
+          <div className="bars" onClick={toggle} aria-label="Toggle sidebar">
+            <MenuIcon />
+          </div>
+        </div>
 
         <div className="menu-list">
           {menuItem.map((item, index) => (

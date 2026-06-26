@@ -106,13 +106,13 @@ navigate('/teams');
                         width: 100,
                         height: 100,
                         margin: "0 auto 16px",
-                        backgroundColor: "#007bff",
+                        backgroundColor: "#1f2d39",
                       }}
                       src={man}
                     >
                       U
                     </Avatar>
-                <Grid container spacing={2} sx={{ backgroundColor: '#f0f4f8', padding: 2 }}>
+                <Grid container spacing={2} sx={{ backgroundColor: '#f7f9fc', padding: 2 }}>
                   <Grid item xs={6}><Typography fontWeight="bold">Team Name:</Typography></Grid>
                   <Grid item xs={6}><Typography>{formData.team_name}</Typography></Grid>
                   <Grid item xs={6}><Typography fontWeight="bold">Client Codes:</Typography></Grid>
@@ -132,7 +132,7 @@ navigate('/teams');
           <Grid item xs={12} md={6}>
             <Card sx={{ padding: 3, boxShadow: 3, borderRadius: 2 }}>
               <CardContent>
-                <Box sx={{ mb: 4, textAlign: 'center', backgroundColor: '#007bff', color: 'white', p: 2, borderRadius: 2 }}>
+                <Box sx={{ mb: 4, textAlign: 'center', backgroundColor: '#1f2d39', color: 'white', p: 2, borderRadius: 2 }}>
                   <Typography variant="h4" fontWeight="bold">Edit Team</Typography>
                 </Box>
 
@@ -201,12 +201,12 @@ navigate('/teams');
   <Button
     variant="contained"
     sx={{
-      backgroundColor: '#007bff',
+      backgroundColor: '#1f2d39',
       color: '#fff',
       borderRadius: '8px',
       paddingX: 4,
       fontWeight: 'bold',
-      '&:hover': { backgroundColor: '#0056b3' }
+      '&:hover': { backgroundColor: '#245fc0' }
     }}
     onClick={handleSubmit}
   >

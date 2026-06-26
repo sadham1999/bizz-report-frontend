@@ -213,7 +213,7 @@ export default function Delay() {
           alignItems: 'center',
         }}>
           <div style={{ position: 'absolute' }}>
-            <HashLoader color="#0016C6" margin={15} size={100} />
+            <HashLoader color="#23b3aa" margin={15} size={100} />
           </div>
         </div>
       )}
@@ -289,7 +289,7 @@ export default function Delay() {
                   <TableCell
                     key={column.id}
                     align={column.align}
-                    style={{ minWidth: column.minWidth, backgroundColor: '#01377D', fontWeight: 'bold', color: "#FFFFFF", fontFamily: 'Montserrat' }}
+                    style={{ minWidth: column.minWidth, backgroundImage: 'linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)', fontWeight: 'bold', color: "#FFFFFF", fontFamily: 'Segoe UI, Inter, system-ui, sans-serif' }}
                   >
                     {column.label}
                   </TableCell>

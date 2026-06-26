@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 
 import Sidebar from "./components/Sidebar";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
+import Protect from "./Protect";
 
 import DailyReport from "./Pages/DailyReport";
 //import WeeklyReport from "./Pages/WeeklyReport";
@@ -25,24 +26,29 @@ import EmployeeMaster from "./Pages/EmployeeMaster";
 import SubClientList from "./Pages/SubClientList";
 import SubClientAddForm from "./Pages/SubClientAdd";
 import SubClientEditForm from "./Pages/SubClientEdit";
+import SignInSide from "./Pages/SignIn";
 //import Dashboard from "./Pages/Dashboard";
 
-function App() {
+function AppRoutes() {
+  const location = useLocation();
+  const showChrome = location.pathname !== "/login";
+
   return (
-    <LocalizationProvider dateAdapter={AdapterMoment}>
-      <Router>
-        <ResponsiveAppBar />
+    <>
+      {showChrome && <ResponsiveAppBar />}
 
-        <Routes>
+      <Routes>
+        <Route path="/login" element={<SignInSide />} />
+
+        <Route element={<Protect />}>
           <Route
-  path="/"
-  element={
-    <Sidebar>
-      <DailyReport />
-    </Sidebar>
-  }
-/>
-
+            path="/"
+            element={
+              <Sidebar>
+                <DailyReport />
+              </Sidebar>
+            }
+          />
           <Route
             path="/tat-report"
             element={
@@ -51,7 +57,6 @@ function App() {
               </Sidebar>
             }
           />
-
           <Route
             path="/daily-report"
             element={
@@ -60,19 +65,6 @@ function App() {
               </Sidebar>
             }
           />
-
-
-
-
-          {/* <Route
-            path="/weekly-report"
-            element={
-              <Sidebar>
-                <WeeklyReport />
-              </Sidebar>
-            }
-          /> */}
-
           <Route
             path="/amendment-report"
             element={
@@ -81,7 +73,6 @@ function App() {
               </Sidebar>
             }
           />
-
           <Route
             path="/cancel-report"
             element={
@@ -90,7 +81,6 @@ function App() {
               </Sidebar>
             }
           />
-
           <Route
             path="/pending-report"
             element={
@@ -99,118 +89,110 @@ function App() {
               </Sidebar>
             }
           />
+          <Route
+            path="/users"
+            element={
+              <Sidebar>
+                <UserList />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/teams"
+            element={
+              <Sidebar>
+                <TeamList />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/add-team"
+            element={
+              <Sidebar>
+                <TeamAddForm />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/edit-team/:id"
+            element={
+              <Sidebar>
+                <TeamEditForm />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/sub-clients"
+            element={
+              <Sidebar>
+                <SubClientList />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/add-subclient"
+            element={
+              <Sidebar>
+                <SubClientAddForm />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/edit-subclient/:id"
+            element={
+              <Sidebar>
+                <SubClientEditForm />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/employee-master"
+            element={
+              <Sidebar>
+                <EmployeeMaster />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/clients"
+            element={
+              <Sidebar>
+                <ClientList />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/add-client"
+            element={
+              <Sidebar>
+                <ClientAddForm />
+              </Sidebar>
+            }
+          />
+          <Route
+            path="/edit-client/:id"
+            element={
+              <Sidebar>
+                <ClientEditForm />
+              </Sidebar>
+            }
+          />
+        </Route>
 
-           <Route
-  path="/users"
-  element={
-    <Sidebar>
-      <UserList />
-    </Sidebar>
-  }
-/>
-<Route
-  path="/teams"
-  element={
-    <Sidebar>
-      <TeamList />
-    </Sidebar>
-  }
-/>
-<Route
-  path="/add-team"
-  element={
-    <Sidebar>
-      <TeamAddForm />
-    </Sidebar>
-  }
-/>
-
-<Route
-  path="/edit-team/:id"
-  element={
-    <Sidebar>
-      <TeamEditForm />
-    </Sidebar>
-  }
-/>
-<Route
-  path="/sub-clients"
-  element={
-    <Sidebar>
-      <SubClientList />
-    </Sidebar>
-  }
-/>
-
-<Route
-  path="/add-subclient"
-  element={
-    <Sidebar>
-      <SubClientAddForm />
-    </Sidebar>
-  }
-/>
-
-<Route
-  path="/edit-subclient/:id"
-  element={
-    <Sidebar>
-      <SubClientEditForm />
-    </Sidebar>
-  }
-/>
-<Route
-  path="/employee-master"
-  element={
-    <Sidebar>
-      <EmployeeMaster />
-    </Sidebar>
-  }
-/>
-<Route
-  path="/clients"
-  element={
-    <Sidebar>
-      <ClientList />
-    </Sidebar>
-  }
-/>
-
-<Route
-  path="/add-client"
-  element={
-    <Sidebar>
-      <ClientAddForm />
-    </Sidebar>
-  }
-/>
-
-<Route
-  path="/edit-client/:id"
-  element={
-    <Sidebar>
-      <ClientEditForm />
-    </Sidebar>
-  }
-/>
-<Route
-path="/sub-clients"
-element={
-  <Sidebar>
-    <ClientList/>
-  </Sidebar>
+        <Route
+          path="*"
+          element={<Navigate to={sessionStorage.getItem("token") ? "/daily-report" : "/login"} replace />}
+        />
+      </Routes>
+    </>
+  );
 }
->
 
-
-
-
-  
-</Route>
-
-
-
-        </Routes>
+function App() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterMoment}>
+      <Router>
+        <AppRoutes />
       </Router>
     </LocalizationProvider>
   );

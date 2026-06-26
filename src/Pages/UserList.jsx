@@ -42,9 +42,9 @@ import "react-toastify/dist/ReactToastify.css";
 import config from "../API/Api";
 
 const BIZZ_COLORS = {
-  dark: "#0f172a",
-  navy: "#1e3a8a",
-  blue: "#2563eb",
+  dark: "#17212b",
+  navy: "#1f2d39",
+  blue: "#23b3aa",
   lightBlue: "#dbeafe",
   border: "#e2e8f0",
   bg: "#f8fafc",
@@ -166,7 +166,7 @@ export default function UserList() {
   const roleLabels = {
     1: { label: "SuperAdmin", color: "#7c3aed" },
     2: { label: "Admin", color: "#059669" },
-    3: { label: "User", color: "#2563eb" },
+    3: { label: "User", color: "#23b3aa" },
   };
 
   const handleExport = async () => {
@@ -228,7 +228,7 @@ export default function UserList() {
             alignItems: "center",
           }}
         >
-          <HashLoader color="#2563eb" size={90} />
+          <HashLoader color="#23b3aa" size={90} />
         </div>
       )}
 
@@ -237,11 +237,13 @@ export default function UserList() {
         elevation={0}
         sx={{
         mb: 3,
-        p: { xs: 2, md: 3 },
+        p: { xs: 1.5, md: 2 },
         borderRadius: "18px",
-        backgroundColor: BIZZ_COLORS.navy,
+        backgroundImage:
+          "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
         color: "#fff",
         boxShadow: "0 10px 28px rgba(15, 23, 42, 0.22)",
+        border: "1px solid rgba(255,255,255,0.08)",
         }}
         >
           <Grid container spacing={2} alignItems="center">
@@ -249,9 +251,9 @@ export default function UserList() {
               <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
                 <Box
                   sx={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: "14px",
+                    width: 40,
+                    height: 40,
+                    borderRadius: "12px",
                     background: "rgba(255,255,255,0.16)",
                     display: "flex",
                     alignItems: "center",
@@ -262,7 +264,7 @@ export default function UserList() {
                 </Box>
 
                 <Box>
-                  <Typography variant="h5" sx={{ fontWeight: 800 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 800 }}>
                     User List
                   </Typography>
                   {/* <Typography variant="body2" sx={{ color: BIZZ_COLORS.lightBlue }}>
@@ -286,6 +288,8 @@ export default function UserList() {
                 sx={{
                   color: "#fff",
                   fontWeight: 700,
+                  height: 28,
+                  "& .MuiChip-label": { px: 1.5 },
                   background: "rgba(255,255,255,0.16)",
                   border: "1px solid rgba(255,255,255,0.25)",
                 }}
@@ -336,7 +340,8 @@ export default function UserList() {
                       borderRadius: "10px",
                       textTransform: "none",
                       fontWeight: 800,
-                      backgroundColor: BIZZ_COLORS.navy, }}
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)", }}
                   >
                     Add User
                   </Button>
@@ -411,7 +416,8 @@ export default function UserList() {
                    align={column.align}
                    sx={{
                   minWidth: column.minWidth,
-                  backgroundColor: BIZZ_COLORS.navy,
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
                   fontWeight: 800,
                   color: "#fff",
                   whiteSpace: "nowrap",

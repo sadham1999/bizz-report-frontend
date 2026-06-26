@@ -26,8 +26,8 @@ import config from "../API/Api";
 
 const BIZZ_COLORS = {
   dark: "#0f172a",
-  navy: "#1e3a8a",
-  blue: "#2563eb",
+  navy: "#1f2d39",
+  blue: "#23b3aa",
   lightBlue: "#dbeafe",
   border: "#e2e8f0",
   bg: "#f8fafc",
@@ -380,11 +380,13 @@ export default function CancelReport() {
           elevation={0}
           sx={{
             mb: 3,
-            p: { xs: 2, md: 3 },
+            p: { xs: 1.5, md: 2 },
             borderRadius: "18px",
-            backgroundColor: BIZZ_COLORS.navy,
+            backgroundImage:
+              "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
             color: "#fff",
             boxShadow: "0 10px 28px rgba(15, 23, 42, 0.22)",
+            border: "1px solid rgba(255,255,255,0.08)",
           }}
         >
           <Grid container spacing={2} alignItems="center">
@@ -392,9 +394,9 @@ export default function CancelReport() {
               <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
                 <Box
                   sx={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: "14px",
+                    width: 40,
+                    height: 40,
+                    borderRadius: "12px",
                     background: "rgba(255,255,255,0.16)",
                     display: "flex",
                     alignItems: "center",
@@ -406,7 +408,7 @@ export default function CancelReport() {
 
                 <Box>
                   <Typography
-                    variant="h5"
+                    variant="h6"
                     sx={{
                       fontWeight: 800,
                       letterSpacing: "0.02em",
@@ -442,6 +444,8 @@ export default function CancelReport() {
                 sx={{
                   color: "#fff",
                   fontWeight: 700,
+                  height: 28,
+                  "& .MuiChip-label": { px: 1.5 },
                   background: "rgba(255,255,255,0.16)",
                   border: "1px solid rgba(255,255,255,0.25)",
                 }}
@@ -561,7 +565,8 @@ export default function CancelReport() {
                   textTransform: "none",
                   fontWeight: 800,
                   whiteSpace: "nowrap",
-                   backgroundColor: BIZZ_COLORS.navy,
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
                   boxShadow: "0 6px 14px rgba(37, 99, 235, 0.25)",
                   "&:hover": {
                     background: isLocked
