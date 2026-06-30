@@ -26,11 +26,12 @@ import "react-toastify/dist/ReactToastify.css";
 // If your API folder is src/API/Api.js and this file is src/Pages/DailyReport.jsx,
 // use "../API/Api"
 import config from "../API/Api";
+import { sidebarGradient } from "../theme";
 
 const BIZZ_COLORS = {
   dark: "#17212b",
   navy: "#1f2d39",
-  blue: "#23b3aa",
+  blue: "#10b981",
   lightBlue: "#dbeafe",
   border: "#e2e8f0",
   bg: "#f8fafc",
@@ -378,7 +379,7 @@ export default function DailyReport() {
             p: { xs: 1.5, md: 2 },
             borderRadius: "18px",
             backgroundImage:
-              "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+              sidebarGradient,
             color: "#fff",
             boxShadow: "0 10px 28px rgba(15, 23, 42, 0.22)",
             border: "1px solid rgba(255,255,255,0.08)",
@@ -574,7 +575,7 @@ export default function DailyReport() {
                   fontWeight: 800,
                   whiteSpace: "nowrap",
                   backgroundImage:
-                    "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+                    sidebarGradient,
                   boxShadow: "0 6px 14px rgba(37, 99, 235, 0.25)",
                   "&:hover": {
                     background: isLocked
@@ -668,3 +669,6 @@ export default function DailyReport() {
     </>
   );
 }
+
+
+

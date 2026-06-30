@@ -36,6 +36,7 @@ import man from "../assets/man.png";
 import { useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import config from "../API/Api";
+import { sidebarGradient } from "../theme";
 import { Chip } from '@mui/material';
 import ClientEditForm from "./SubClientEdit";
 
@@ -486,7 +487,7 @@ const UserEditForm = () => {
                     sx={{
                       marginBottom: 4,
                       textAlign: "center",
-                      backgroundImage: "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+                      backgroundImage: sidebarGradient,
                       color: "white",
                       padding: 2,
                       borderRadius: 3,
@@ -845,3 +846,6 @@ const UserEditForm = () => {
 };
 
 export default UserEditForm;
+
+
+

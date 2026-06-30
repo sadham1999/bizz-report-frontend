@@ -22,6 +22,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ScheduleIcon from '@mui/icons-material/Schedule'; // ⏱️ Icon for new button
 import config from "../API/Api";
+import { buttonGradient, sidebarGradient } from "../theme";
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
 import TimerIcon from "@mui/icons-material/Timer";
@@ -29,7 +30,7 @@ import dayjs from "dayjs";
 const BIZZ_COLORS = {
   dark: "#0f172a",
   navy: "#1f2d39",
-  blue: "#23b3aa",
+  blue: "#10b981",
   lightBlue: "#dbeafe",
 };
 
@@ -444,7 +445,7 @@ const fetchApiData = async () => {
     p: { xs: 1.5, md: 2 },
     borderRadius: "18px",
     backgroundImage:
-      "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+      sidebarGradient,
     color: "#fff",
     boxShadow: "0 10px 28px rgba(15, 23, 42, 0.22)",
     border: "1px solid rgba(255,255,255,0.08)",
@@ -648,7 +649,6 @@ onChange={(date) => setEndDate(date)}      slotProps={{
           <Grid item sx={{ flex: '0 0 12%' }}>
             <Button
               variant="contained"
-              color="success"
               fullWidth
               startIcon={
                 exporting ? (
@@ -665,8 +665,12 @@ onChange={(date) => setEndDate(date)}      slotProps={{
                 textTransform: 'none',
                 fontWeight: 600,
                 borderRadius: '8px',
-                backgroundColor: '#14b8a6',
-                '&:hover': { backgroundColor: '#0f766e' },
+                backgroundImage: buttonGradient,
+                boxShadow: '0 6px 14px rgba(16, 185, 129, 0.25)',
+                '&:hover': {
+                  backgroundImage:
+                    'linear-gradient(135deg, #047857 0%, #059669 58%, #34d399 100%)',
+                },
                 whiteSpace: 'nowrap',
               }}
             >
@@ -808,7 +812,7 @@ onChange={(date) => setEndDate(date)}      slotProps={{
                     style={{
                       minWidth: column.minWidth,
                       backgroundImage:
-                        "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+                        sidebarGradient,
                       fontWeight: 'bold',
                       color: "#FFFFFF",
                       fontFamily: 'Montserrat',
@@ -916,3 +920,6 @@ onChange={(date) => setEndDate(date)}      slotProps={{
     </>
   );
 }
+
+
+

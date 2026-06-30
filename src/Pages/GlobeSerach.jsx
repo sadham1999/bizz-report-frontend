@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import * as XLSX from 'xlsx';
 import config from "../API/Api";
+import { sidebarGradient } from "../theme";
 
 const columns = [
   { id: 'client_code', label: 'Client Code', minWidth: 170 },
@@ -289,7 +290,7 @@ export default function Delay() {
                   <TableCell
                     key={column.id}
                     align={column.align}
-                    style={{ minWidth: column.minWidth, backgroundImage: 'linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)', fontWeight: 'bold', color: "#FFFFFF", fontFamily: 'Segoe UI, Inter, system-ui, sans-serif' }}
+                    style={{ minWidth: column.minWidth, backgroundImage: sidebarGradient, fontWeight: 'bold', color: "#FFFFFF", fontFamily: 'Segoe UI, Inter, system-ui, sans-serif' }}
                   >
                     {column.label}
                   </TableCell>
@@ -366,3 +367,6 @@ export default function Delay() {
     </>
   );
 }
+
+
+

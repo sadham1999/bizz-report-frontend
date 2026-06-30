@@ -38,10 +38,11 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { HashLoader } from "react-spinners";
 import config from "../API/Api";
+import { buttonGradient, sidebarGradient } from "../theme";
 
 const BIZZ_COLORS = {
   navy: "#1f2d39",
-  blue: "#23b3aa",
+  blue: "#10b981",
   border: "#e2e8f0",
   bg: "#f8fafc",
   text: "#1e293b",
@@ -310,7 +311,7 @@ navigate(`/edit-client/${id}`);  };
             p: { xs: 1.5, md: 2 },
             borderRadius: "18px",
             backgroundImage:
-              "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+              sidebarGradient,
             color: "#fff",
             boxShadow: "0 10px 28px rgba(15, 23, 42, 0.22)",
             border: "1px solid rgba(255,255,255,0.08)",
@@ -398,15 +399,20 @@ navigate(`/edit-client/${id}`);  };
                     variant="contained"
                     startIcon={<AddIcon />}
                     onClick={() => navigate("/add-client")}
-                    sx={{
-                      borderRadius: "10px",
-                      textTransform: "none",
-                      fontWeight: 800,
-                      backgroundImage:
-                        "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
-                    }}
-                  >
-                    Add Client
+                  sx={{
+                    borderRadius: "10px",
+                    textTransform: "none",
+                    fontWeight: 800,
+                    color: "#ffffff",
+                    backgroundImage: "none",
+                    backgroundColor: "#111111",
+                    "&:hover": {
+                      backgroundImage: "none",
+                      backgroundColor: "#000000",
+                    },
+                  }}
+                >
+                  Add Client
                   </Button>
                 </Grid>
 
@@ -477,7 +483,7 @@ navigate(`/edit-client/${id}`);  };
                       sx={{
                         minWidth: column.minWidth,
                         backgroundImage:
-                          "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+                          sidebarGradient,
                         fontWeight: 800,
                         color: "#fff",
                         whiteSpace: "nowrap",
@@ -534,7 +540,7 @@ navigate(`/edit-client/${id}`);  };
           <DialogTitle
             sx={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)",
+                sidebarGradient,
               color: "#fff",
               fontWeight: 800,
             }}
@@ -580,3 +586,6 @@ navigate(`/edit-client/${id}`);  };
 };
 
 export default ClientList;
+
+
+

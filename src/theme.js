@@ -20,7 +20,10 @@ export const appColors = {
 };
 
 export const sidebarGradient =
-  "linear-gradient(180deg, rgba(13, 19, 24, 0.98) 0%, rgba(20, 28, 35, 0.98) 52%, rgba(28, 38, 47, 0.98) 100%)";
+  "linear-gradient(135deg, rgba(17, 32, 36, 0.98) 0%, rgba(24, 43, 46, 0.98) 52%, rgba(33, 58, 61, 0.98) 100%)";
+
+export const buttonGradient =
+  "linear-gradient(135deg, #059669 0%, #10b981 55%, #6ee7b7 100%)";
 
 const theme = createTheme({
   palette: {
@@ -162,24 +165,26 @@ const theme = createTheme({
           boxShadow: "none",
         },
         containedPrimary: {
-          backgroundImage: `linear-gradient(135deg, ${appColors.navy} 0%, ${appColors.teal} 100%)`,
+          backgroundImage: buttonGradient,
           "&:hover": {
-            backgroundImage: `linear-gradient(135deg, ${appColors.navyDeep} 0%, ${appColors.tealDeep} 100%)`,
-            boxShadow: "0 12px 26px rgba(31, 45, 57, 0.18)",
+            backgroundImage:
+              "linear-gradient(135deg, #047857 0%, #059669 58%, #34d399 100%)",
+            boxShadow: "0 12px 26px rgba(16, 185, 129, 0.2)",
           },
         },
         containedSecondary: {
-          backgroundImage: `linear-gradient(135deg, ${appColors.teal} 0%, #6cd4cb 100%)`,
+          backgroundImage: buttonGradient,
           "&:hover": {
-            backgroundImage: `linear-gradient(135deg, ${appColors.tealDeep} 0%, #4fbeb3 100%)`,
+            backgroundImage:
+              "linear-gradient(135deg, #047857 0%, #059669 58%, #34d399 100%)",
           },
         },
         outlinedPrimary: {
-          borderColor: appColors.navy,
-          color: appColors.navy,
+          borderColor: "#10b981",
+          color: "#059669",
           "&:hover": {
-            borderColor: appColors.teal,
-            backgroundColor: alpha(appColors.teal, 0.06),
+            borderColor: "#059669",
+            backgroundColor: alpha("#10b981", 0.08),
           },
         },
       },
@@ -337,10 +342,10 @@ const theme = createTheme({
         root: {
           borderRadius: 14,
           "&.Mui-selected": {
-            backgroundColor: alpha(appColors.teal, 0.14),
-            color: appColors.navy,
+            backgroundColor: alpha("#10b981", 0.14),
+            color: "#059669",
             "&:hover": {
-              backgroundColor: alpha(appColors.teal, 0.18),
+              backgroundColor: alpha("#10b981", 0.18),
             },
           },
           "&:hover": {
