@@ -150,7 +150,7 @@ navigate(`/edit-subclient/${id}`);
       const status = statusLabels[value];
 
       return (
-        <TableCell key={column.id}>
+        <TableCell key={column.id} sx={{ minWidth: column.minWidth, whiteSpace: "nowrap" }}>
           <span
             style={{
               backgroundColor: status?.color || "#dc2626",
@@ -169,7 +169,10 @@ navigate(`/edit-subclient/${id}`);
 
     if (column.id === "actions") {
       return (
-        <TableCell key={column.id}>
+        <TableCell
+          key={column.id}
+          sx={{ minWidth: column.minWidth, whiteSpace: "nowrap", textAlign: "center" }}
+        >
           {sessionStorage.getItem("RoleId") !== "2" ? (
             <>
               <IconButton onClick={() => handleEdit(row.id)} sx={{ color: BIZZ_COLORS.blue }}>
@@ -189,7 +192,7 @@ navigate(`/edit-subclient/${id}`);
 
     if (column.id === "address") {
       return (
-        <TableCell key={column.id}>
+        <TableCell key={column.id} sx={{ minWidth: column.minWidth, whiteSpace: "nowrap" }}>
           <TextField
             multiline
             value={value || ""}
@@ -213,7 +216,10 @@ navigate(`/edit-subclient/${id}`);
     }
 
     return (
-      <TableCell key={column.id} sx={{ whiteSpace: "nowrap", fontSize: "0.85rem" }}>
+      <TableCell
+        key={column.id}
+        sx={{ minWidth: column.minWidth, whiteSpace: "nowrap", fontSize: "0.85rem" }}
+      >
         {value || "N/A"}
       </TableCell>
     );
@@ -370,11 +376,19 @@ navigate(`/edit-subclient/${id}`);
           <TableContainer
             sx={{
               maxHeight: 500,
+              overflowX: "auto",
               borderRadius: "14px",
               border: `1px solid ${BIZZ_COLORS.border}`,
+              "&::-webkit-scrollbar": {
+                height: "10px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "rgba(17, 24, 39, 0.35)",
+                borderRadius: "999px",
+              },
             }}
           >
-            <Table stickyHeader>
+            <Table stickyHeader sx={{ minWidth: 1240, width: "max-content" }}>
               <TableHead>
                 <TableRow>
                   {columns.map((column) => (
